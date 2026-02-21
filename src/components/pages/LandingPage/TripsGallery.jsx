@@ -1,0 +1,181 @@
+import { useRef } from 'react';
+
+const trips = [
+  {
+    id: 1,
+    title: 'Yallapetty , Munnar',
+    description: 'oct 4, 5 ,2025 ,41 people joined this trip',
+    image: '/images/LandingPage/gallary/1.webp',
+    size: 'tall', // 490px height
+  },
+  {
+    id: 2,
+    title: '900 kandi - wayanad',
+    description: 'nov 09-10, 23 people joined this trip',
+    image: '/images/LandingPage/gallary/2.webp',
+    size: 'short', // 112px below = 378px height
+  },
+  {
+    id: 3,
+    title: 'CampFire',
+    description: 'from munnar',
+    image: '/images/LandingPage/gallary/5.webp',
+    size: 'tall',
+  },
+  {
+    id: 4,
+    title: 'Tropical Sunset',
+    description: 'Palm trees and vibrant skies',
+    image: '/images/LandingPage/gallary/3.webp',
+    size: 'short',
+  },
+  {
+    id: 5,
+    title: 'Mamalakandam School,Ernakulam',
+    description: 'Beautiful Goverment school',
+    image: '/images/LandingPage/gallary/8.webp',
+    size: 'tall',
+  },
+];
+
+const TripsGallery = () => {
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const scrollAmount = 360;
+      scrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  return (
+    <section
+      className="w-full bg-white px-6 md:px-16 py-16 md:py-20"
+     style={{ fontFamily: "'Urbanist', sans-serif" }}
+
+    >
+      {/* Header */}
+      <div className="text-center mb-12">
+        <p className="text-[#888] text-xs tracking-widest uppercase mb-2">
+          Trips We Love
+        </p>
+        <h2
+          className="text-[#1a1a1a] text-3xl md:text-4xl font-bold leading-snug max-w-xl mx-auto"
+          style={{ fontFamily: "'Urbanist', sans-serif" }}
+
+        >
+          Ready to make new friends and new memories?
+        </h2>
+        <p className="text-[#666] text-sm mt-3 max-w-md mx-auto">
+          From misty hills to coastal sunsets, our trips capture the best of
+          nature, culture, and connection.
+        </p>
+      </div>
+
+      {/* Cards container */}
+      <div className="relative">
+        {/* Scrollable row */}
+        <div
+          ref={scrollRef}
+          className="flex items-start gap-5 overflow-x-auto scrollbar-hide scroll-smooth pb-4"
+          style={{
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+          }}
+        >
+          {trips.map((trip) => {
+            // Alternating heights: tall = 490px, short = 378px (112px less)
+            const cardHeight = 'h-[490px]';
+            const marginTop = trip.size === 'short' ? 'mt-[112px]' : '';
+            
+
+            return (
+                <div
+                key={trip.id}
+                className={`relative flex-shrink-0 w-[341px] ${cardHeight} ${marginTop} rounded-3xl overflow-hidden shadow-md group cursor-pointer`}
+              >
+                {/* Image */}
+                <img
+                  src={trip.image}
+                  alt={trip.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
+                {/* Text content */}
+                <div className="absolute bottom-0 left-0 right-0 p-5 flex flex-col gap-1">
+                  <h3 className="text-white text-xl font-bold">
+                    {trip.title}
+                  </h3>
+                  <p className="text-white/80 text-xs">
+                    {trip.description}
+                  </p>
+
+                  <button className="self-end w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center mt-2 hover:bg-white/30 transition-all">
+                    <svg
+                      className="w-3.5 h-3.5 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2.5}
+                        d="M7 17L17 7M17 7H7M17 7v10"
+                      />
+                    </svg>
+                  </button>
+                </div>    
+
+
+               
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Navigation arrows */}
+        <div className="flex items-center justify-center gap-4 mt-8">
+          <button
+            onClick={() => scroll('left')}
+            className="w-10 h-10 rounded-full border border-[#ccc] bg-white flex items-center justify-center hover:bg-[#2d4a2d] hover:border-[#2d4a2d] hover:text-white transition-all duration-200"
+            aria-label="Scroll left"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Progress bar */}
+          <div className="w-72 h-1 bg-[#ddd] rounded-full overflow-hidden">
+            <div className="w-1/3 h-full bg-[#2d4a2d] rounded-full transition-all duration-300" />
+          </div>
+
+          <button
+            onClick={() => scroll('right')}
+            className="w-10 h-10 rounded-full border border-[#ccc] bg-white flex items-center justify-center hover:bg-[#2d4a2d] hover:border-[#2d4a2d] hover:text-white transition-all duration-200"
+            aria-label="Scroll right"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {/* Hide scrollbar CSS */}
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
+    </section>
+  );
+};
+
+export default TripsGallery;
