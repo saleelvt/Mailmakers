@@ -1,9 +1,15 @@
 import { useState } from 'react';
 
-const Navbar = () => {
+const Navbar = ({ currentPath = '/' }) => {
   const [open, setOpen] = useState(false);
 
-  const navLinks = ['Home', 'About Us', 'Destinations', 'Packages', 'Contact'];
+  const navLinks = [
+    { label: 'Home', href: '/' },
+    { label: 'About Us', href: '/about' },
+    { label: 'Destinations', href: '#' },
+    { label: 'Packages', href: '#' },
+    { label: 'Contact', href: '#' },
+  ];
 
   // ✅ YOUR ORIGINAL GLASS — unchanged
   const glassClass = `
@@ -49,11 +55,13 @@ const Navbar = () => {
         >
           {navLinks.map((link) => (
             <a
-              key={link}
-              href="#"
-              className="text-white text-base font-medium opacity-90 hover:opacity-100 transition"
+              key={link.label}
+              href={link.href}
+              className={`text-white text-base font-medium transition ${
+                currentPath === link.href || (link.href === '/' && currentPath === '') ? 'opacity-100' : 'opacity-90 hover:opacity-100'
+              }`}
             >
-              {link}
+              {link.label}
             </a>
           ))}
         </div>
@@ -106,12 +114,12 @@ const Navbar = () => {
 
             {navLinks.map((link) => (
               <a
-                key={link}
-                href="#"
+                key={link.label}
+                href={link.href}
                 onClick={() => setOpen(false)}
                 className="px-5 py-4 text-white text-sm font-medium hover:bg-white/10 transition"
               >
-                {link}
+                {link.label}
               </a>
             ))}
 

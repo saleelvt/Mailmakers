@@ -1,5 +1,10 @@
 const Footer = () => {
-  const quickLinks = ['Home', 'About Us', 'Packages', 'Gallery'];
+  const quickLinks = [
+    { label: 'Home', href: '/' },
+    { label: 'About Us', href: '/about' },
+    { label: 'Packages', href: '#' },
+    { label: 'Gallery', href: '#' },
+  ];
 
   const socials = [
     { label: 'Instagram', icon: (
@@ -36,7 +41,8 @@ const Footer = () => {
           <a href="/" className="flex items-center gap-1 group">
             <div className="w-[100px] md:w-[118px] h-auto rounded-full overflow-hidden flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
               <img
-                src="/icons/logo.png"
+                src
+                ="/icons/logo.png"
                 alt="TravelTribe logo"
                 className="w-full h-full object-contain"
               />
@@ -57,11 +63,11 @@ const Footer = () => {
           </h4>
           {quickLinks.map((link) => (
             <a
-              key={link}
-              href="#"
+              key={link.label}
+              href={link.href}
               className="text-[rgb(0,0,0)] text-md hover:text-[#2d4a2d] transition-colors"
             >
-              {link}
+              {link.label}
             </a>
           ))}
         </div>
