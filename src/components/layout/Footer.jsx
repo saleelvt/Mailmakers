@@ -79,13 +79,12 @@ const Footer = () => {
   </h4>
 
   {/* Call Section */}
-  <a
-    href="tel:+918281797072"
-    className="text-[rgb(0,0,0)] text-md hover:text-blue-600 transition"
-  >
-    +91 8281-797072
-  </a>
-
+ <a
+  href="tel:+916238090721"
+  className="text-[rgb(0,0,0)] text-md hover:text-blue-600 transition"
+>
+  +91 62380 90721
+</a>
   {/* Email Section */}
   <a
     href="mailto:milemakersindia@gmail.com"

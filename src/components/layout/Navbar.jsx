@@ -1,5 +1,16 @@
 import { useState } from 'react';
 
+
+
+
+const phoneNumber = "916238090721"; // Replace with your WhatsApp number (with country code, no +)
+
+const message = `ഒരു യാത്ര പോയാൽ തീരാവുന്ന പ്രശ്നമേ ഉള്ളൂ എല്ലാർക്കും.. 💕
+
+ Can i Get More Details About this Camp..?`;
+
+const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
 const Navbar = ({ currentPath = '/' }) => {
   const [open, setOpen] = useState(false);
 
@@ -66,25 +77,35 @@ const Navbar = ({ currentPath = '/' }) => {
         </div>
 
         {/* DESKTOP BOOK — unchanged */}
-        <button
-          className={`
-            hidden md:flex items-center gap-3
-            px-5 py-2.5
-            text-white text-sm font-medium
-            rounded-full
-            ${glassClass}
-            hover:bg-white/15
-            transition
-          `}
-        >
-          Book now
-          <span className="w-9 h-9 bg-white text-black rounded-full flex items-center justify-center">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </span>
-        </button>
-
+      <button
+  onClick={() => window.open(whatsappURL, "_blank")}
+  className={`
+    hidden md:flex items-center gap-3
+    px-5 py-2.5
+    text-white text-sm font-medium
+    rounded-full
+    ${glassClass}
+    hover:bg-white/15
+    transition
+  `}
+>
+  Book Now
+  <span className="w-9 h-9 bg-white text-black rounded-full flex items-center justify-center">
+    <svg
+      className="w-4 h-4"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2.5}
+        d="M7 17L17 7M17 7H7M17 7v10"
+      />
+    </svg>
+  </span>
+</button>
         {/* MOBILE TOGGLE */}
         <button
           onClick={() => setOpen(!open)}
@@ -123,17 +144,30 @@ const Navbar = ({ currentPath = '/' }) => {
             ))}
 
             {/* MOBILE BOOK */}
-            <button
-              className="flex items-center justify-between px-5 py-4 text-white text-sm font-semibold hover:bg-white/10 transition"
-              onClick={() => setOpen(false)}
-            >
-              Book now
-              <span className="w-7 h-7 bg-white text-black rounded-full flex items-center justify-center">
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 17L17 7M17 7H7M17 7v10" />
-                </svg>
-              </span>
-            </button>
+           <button
+  className="flex items-center justify-between px-5 py-4 text-white text-sm font-semibold hover:bg-white/10 transition"
+  onClick={() => {
+    window.open(whatsappURL, "_blank");
+    setOpen(false);
+  }}
+>
+  Book Now
+  <span className="w-7 h-7 bg-white text-black rounded-full flex items-center justify-center">
+    <svg
+      className="w-3.5 h-3.5"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2.5}
+        d="M7 17L17 7M17 7H7M17 7v10"
+      />
+    </svg>
+  </span>
+</button>
 
           </div>
         </div>

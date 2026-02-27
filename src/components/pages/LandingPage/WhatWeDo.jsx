@@ -8,17 +8,17 @@ const WhatWeDo = () => {
 
   return (
     <section
-      className="w-full bg-white px-6 md:px-16 py-16 md:py-20"
+      className="w-full bg-white  p-4  "
       style={{ fontFamily: "'Urbanist', sans-serif" }}
     >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-center gap-10 md:gap-8">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-center gap-10 md:gap-8 md:px-16 py-16 md:py-2">
 
         {/* LEFT — Quote + Reviews */}
         <div className="w-full md:w-[340px] flex flex-col gap-6 pt-0 md:pt-8 text-center md:text-left">
           <h2 className="text-[#1a1a1a] text-2xl sm:text-3xl md:text-[55px] font-bold leading-[1.2]">
             " The Perfect Travel Partner for you and your Family "
           </h2>
-
+ 
           <div className="flex flex-col items-center md:items-start gap-3">
             {/* Avatar stack */}
             <div className="flex -space-x-2 justify-center md:justify-start">
@@ -43,8 +43,8 @@ const WhatWeDo = () => {
             </div>
 
             <div className="flex items-center gap-1.5 text-sm md:text-base font-semibold justify-center md:justify-start">
-              <span className="text-[#1a1a1a]">50+</span>
-              <span className="text-[#f59e0b] underline decoration-2 underline-offset-2">
+              <span className="text-[#1a1a1a] text-xl">500+</span>
+              <span className="text-[#ff6e06e6] underline decoration-2 underline-offset-2">
                 Happy Customers
               </span>
             </div>
@@ -87,7 +87,7 @@ const WhatWeDo = () => {
             everyone feels included, safe, and connected.
           </p>
 
-          <ul className="flex flex-col gap-3 mt-2">
+          {/* <ul className="flex flex-col gap-3 mt-2">
             {features.map((item) => (
               <li
                 key={item}
@@ -97,7 +97,7 @@ const WhatWeDo = () => {
                 <span>{item}</span>
               </li>
             ))}
-          </ul>
+          </ul> */}
         </div>
 
       </div>

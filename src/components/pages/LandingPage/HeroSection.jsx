@@ -75,19 +75,25 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-[#F6F6F6] text-sm leading-relaxed max-w-[520px] md:max-w-[400px]">
-              Since August 2, 2025, Milemakers has been bringing people from
+              Since 2025, Milemakers has been bringing people from
               Kerala together through unforgettable group trips. We turn unknown
               faces into travel buddies, and travel buddies into lifelong memories.
             </p>
 
-            <button className="self-start flex items-center gap-3 border border-white/40 text-white text-sm font-semibold px-6 py-3 rounded-full hover:bg-white hover:text-black transition-all duration-300 group">
-              Join the Next Trip
-              <span className="w-7 h-7 bg-white text-black rounded-full flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all duration-300">
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 17L17 7M17 7H7M17 7v10" />
-                </svg>
-              </span>
-            </button>
+            <a
+  href="https://wa.me/916238090721?text=Hi%20I%20would%20like%20to%20know%20more%20about%20the%20next%20trip."
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button className="self-start flex items-center gap-3 border border-white/40 text-white text-sm font-semibold px-6 py-3 rounded-full hover:bg-white hover:text-black transition-all duration-300 group">
+    Join the Next Trip
+    <span className="w-7 h-7 bg-white text-black rounded-full flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all duration-300">
+      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 17L17 7M17 7H7M17 7v10" />
+      </svg>
+    </span>
+  </button>
+</a>
           </div>
 
           {/* RIGHT CARDS */}
