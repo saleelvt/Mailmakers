@@ -24,7 +24,7 @@ const HeroSection = () => {
   const pausedRef = useRef(false);
 
   useEffect(() => {
-    const animate = () => {
+    const animate = () => { 
       if (!pausedRef.current) {
         posRef.current += SPEED;
         if (posRef.current >= TOTAL_WIDTH) posRef.current = 0;

@@ -6,9 +6,8 @@ const Navbar = ({ currentPath = '/' }) => {
   const navLinks = [
     { label: 'Home', href: '/' },
     { label: 'About Us', href: '/about' },
-    { label: 'Destinations', href: '#' },
-    { label: 'Packages', href: '#' },
-    { label: 'Contact', href: '#' },
+    { label: 'Packages', href: '/packages' },
+    { label: 'Contact', href: '/contact' },
   ];
 
   // ✅ YOUR ORIGINAL GLASS — unchanged

@@ -18,8 +18,8 @@ const founders = [
     imageClass: 'object-center',
   },
   {
-    name: 'Sabith NP',
-    title: 'Co-Founder',
+    name: 'Sabith MP',
+    title: 'Co-Founder ',
     image: '/images/people/Sabith NP.jpeg',
     imageClass: 'object-[50%_22%] brightness-110 contrast-110',
   },
@@ -118,7 +118,7 @@ const AboutPage = () => {
                 key={founder.name}
                 className="group overflow-hidden rounded-[28px] border border-[#dce5d7] bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
               >
-                <div className="overflow-hidden rounded-2xl">
+                <div className="overflow-hidden rounded-xl">
                   <img
                     src={founder.image}
                     alt={founder.name}
